@@ -1,0 +1,632 @@
+Analysis & Synthesis report for pong
+Sat Sep  2 17:41:30 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for Top-level Entity: |pong
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |pong
+ 14. Parameter Settings for User Entity Instance: div_gen:U0
+ 15. Parameter Settings for User Entity Instance: sync_generator:u1
+ 16. Parameter Settings for User Entity Instance: image_generator:u2
+ 17. Parameter Settings for User Entity Instance: div_gen:u3
+ 18. Parameter Settings for User Entity Instance: div_gen:u5
+ 19. Parameter Settings for User Entity Instance: div_gen:u6
+ 20. Parameter Settings for User Entity Instance: div_gen:u7
+ 21. Parameter Settings for User Entity Instance: div_gen:u8
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Sep  2 17:41:30 2023          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; pong                                           ;
+; Top-level Entity Name              ; pong                                           ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 850                                            ;
+;     Total combinational functions  ; 850                                            ;
+;     Dedicated logic registers      ; 221                                            ;
+; Total registers                    ; 221                                            ;
+; Total pins                         ; 38                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; pong               ; pong               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; pong.vhd                         ; yes             ; User VHDL File  ; C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd            ;         ;
+; div_gen.vhd                      ; yes             ; User VHDL File  ; C:/Users/MECRUN/Desktop/Quartus/pong22/div_gen.vhd         ;         ;
+; image_generator.vhd              ; yes             ; User VHDL File  ; C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd ;         ;
+; score_display.vhd                ; yes             ; User VHDL File  ; C:/Users/MECRUN/Desktop/Quartus/pong22/score_display.vhd   ;         ;
+; sync_generator.vhd               ; yes             ; User VHDL File  ; C:/Users/MECRUN/Desktop/Quartus/pong22/sync_generator.vhd  ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 850         ;
+;                                             ;             ;
+; Total combinational functions               ; 850         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 204         ;
+;     -- 3 input functions                    ; 234         ;
+;     -- <=2 input functions                  ; 412         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 325         ;
+;     -- arithmetic mode                      ; 525         ;
+;                                             ;             ;
+; Total registers                             ; 221         ;
+;     -- Dedicated logic registers            ; 221         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 38          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 181         ;
+; Total fan-out                               ; 3192        ;
+; Average fan-out                             ; 2.78        ;
++---------------------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name      ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-----------------+--------------+
+; |pong                      ; 850 (2)             ; 221 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 38   ; 0            ; 0          ; |pong                    ; pong            ; work         ;
+;    |div_gen:U0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:U0         ; div_gen         ; work         ;
+;    |div_gen:u3|            ; 33 (33)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:u3         ; div_gen         ; work         ;
+;    |div_gen:u5|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:u5         ; div_gen         ; work         ;
+;    |div_gen:u6|            ; 31 (31)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:u6         ; div_gen         ; work         ;
+;    |div_gen:u7|            ; 33 (33)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:u7         ; div_gen         ; work         ;
+;    |div_gen:u8|            ; 29 (29)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|div_gen:u8         ; div_gen         ; work         ;
+;    |image_generator:u2|    ; 637 (637)           ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|image_generator:u2 ; image_generator ; work         ;
+;    |score_display:u4|      ; 34 (34)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|score_display:u4   ; score_display   ; work         ;
+;    |sync_generator:u1|     ; 49 (49)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |pong|sync_generator:u1  ; sync_generator  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++----------------------------------------------+-------------------------------------------------+
+; Register name                                ; Reason for Removal                              ;
++----------------------------------------------+-------------------------------------------------+
+; image_generator:u2|paddle1_pos_x[0,2,3,6..9] ; Stuck at GND due to stuck port data_in          ;
+; image_generator:u2|paddle2_pos_x[0,4,5,7,8]  ; Stuck at GND due to stuck port data_in          ;
+; div_gen:U0|Qt                                ; Stuck at GND due to stuck port data_in          ;
+; image_generator:u2|paddle1_pos_x[4,5]        ; Merged with image_generator:u2|paddle1_pos_x[1] ;
+; image_generator:u2|paddle2_pos_x[1..3,6,9]   ; Merged with image_generator:u2|paddle1_pos_x[1] ;
+; div_gen:u5|Qt[15]                            ; Merged with div_gen:u3|Qt[15]                   ;
+; div_gen:u5|Qt[14]                            ; Merged with div_gen:u3|Qt[14]                   ;
+; div_gen:u5|Qt[12]                            ; Merged with div_gen:u3|Qt[12]                   ;
+; div_gen:u5|Qt[10]                            ; Merged with div_gen:u3|Qt[10]                   ;
+; div_gen:u5|Qt[8]                             ; Merged with div_gen:u3|Qt[8]                    ;
+; div_gen:u5|Qt[6]                             ; Merged with div_gen:u3|Qt[6]                    ;
+; div_gen:u5|Qt[5]                             ; Merged with div_gen:u3|Qt[5]                    ;
+; div_gen:u5|Qt[4]                             ; Merged with div_gen:u3|Qt[4]                    ;
+; div_gen:u5|Qt[2]                             ; Merged with div_gen:u3|Qt[2]                    ;
+; div_gen:u5|Qt[17]                            ; Merged with div_gen:u3|Qt[17]                   ;
+; div_gen:u5|Qt[16]                            ; Merged with div_gen:u3|Qt[16]                   ;
+; div_gen:u5|Qt[13]                            ; Merged with div_gen:u3|Qt[13]                   ;
+; div_gen:u5|Qt[11]                            ; Merged with div_gen:u3|Qt[11]                   ;
+; div_gen:u5|Qt[9]                             ; Merged with div_gen:u3|Qt[9]                    ;
+; div_gen:u5|Qt[7]                             ; Merged with div_gen:u3|Qt[7]                    ;
+; div_gen:u5|Qt[3]                             ; Merged with div_gen:u3|Qt[3]                    ;
+; div_gen:u5|Qt[1]                             ; Merged with div_gen:u3|Qt[1]                    ;
+; div_gen:u5|Qt[0]                             ; Merged with div_gen:u3|Qt[0]                    ;
+; div_gen:u6|Qt[0]                             ; Merged with div_gen:u3|Qt[0]                    ;
+; div_gen:u8|Qt[0]                             ; Merged with div_gen:u3|Qt[0]                    ;
+; div_gen:u7|Qt[0]                             ; Merged with div_gen:u3|Qt[0]                    ;
+; div_gen:u8|Qt[1]                             ; Merged with div_gen:u3|Qt[1]                    ;
+; div_gen:u6|Qt[1]                             ; Merged with div_gen:u3|Qt[1]                    ;
+; div_gen:u7|Qt[1]                             ; Merged with div_gen:u3|Qt[1]                    ;
+; div_gen:u7|Qt[2]                             ; Merged with div_gen:u6|Qt[2]                    ;
+; div_gen:u8|Qt[2]                             ; Merged with div_gen:u6|Qt[2]                    ;
+; image_generator:u2|paddle1_pos_x[1]          ; Stuck at GND due to stuck port data_in          ;
+; Total Number of Removed Registers = 47       ;                                                 ;
++----------------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 221   ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 217   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 116   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; image_generator:u2|Ball_pos_x[8]        ; 8       ;
+; image_generator:u2|Ball_pos_x[6]        ; 7       ;
+; image_generator:u2|Ball_pos_y[7]        ; 12      ;
+; image_generator:u2|Ball_pos_y[6]        ; 12      ;
+; image_generator:u2|Ball_pos_y[5]        ; 12      ;
+; image_generator:u2|Ball_pos_y[4]        ; 11      ;
+; image_generator:u2|paddle1_pos_y[7]     ; 10      ;
+; image_generator:u2|paddle1_pos_y[6]     ; 10      ;
+; image_generator:u2|paddle1_pos_y[5]     ; 10      ;
+; image_generator:u2|paddle1_pos_y[4]     ; 9       ;
+; image_generator:u2|paddle2_pos_y[7]     ; 10      ;
+; image_generator:u2|paddle2_pos_y[6]     ; 10      ;
+; image_generator:u2|paddle2_pos_y[5]     ; 10      ;
+; image_generator:u2|paddle2_pos_y[4]     ; 9       ;
+; Total number of inverted registers = 14 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pong|image_generator:u2|score2[30]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |pong|image_generator:u2|score1[29]        ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |pong|image_generator:u2|Ball_pos_y[9]     ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |pong|image_generator:u2|Ball_pos_x[5]     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |pong|image_generator:u2|paddle1_pos_y[0]  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |pong|image_generator:u2|paddle2_pos_y[3]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|image_generator:u2|Ball_pos_y[4]     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|image_generator:u2|Ball_pos_x[6]     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |pong|image_generator:u2|paddle1_pos_y[6]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |pong|image_generator:u2|paddle2_pos_y[4]  ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; Yes        ; |pong|image_generator:u2|Ball_direction[0] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; No         ; |pong|image_generator:u2|Add9              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++---------------------------------------------------+
+; Source assignments for Top-level Entity: |pong    ;
++------------+---------+------+---------------------+
+; Assignment ; Value   ; From ; To                  ;
++------------+---------+------+---------------------+
+; LOCATION   ; Pin_C10 ; -    ; direction_switch[3] ;
+; LOCATION   ; Pin_C11 ; -    ; direction_switch[2] ;
+; LOCATION   ; Pin_C12 ; -    ; direction_switch[1] ;
+; LOCATION   ; Pin_A12 ; -    ; direction_switch[0] ;
+; LOCATION   ; Pin_B22 ; -    ; seg1[6]             ;
+; LOCATION   ; Pin_C22 ; -    ; seg1[5]             ;
+; LOCATION   ; Pin_B21 ; -    ; seg1[4]             ;
+; LOCATION   ; Pin_A21 ; -    ; seg1[3]             ;
+; LOCATION   ; Pin_B19 ; -    ; seg1[2]             ;
+; LOCATION   ; Pin_A20 ; -    ; seg1[1]             ;
+; LOCATION   ; Pin_B20 ; -    ; seg1[0]             ;
+; LOCATION   ; Pin_C17 ; -    ; seg2[6]             ;
+; LOCATION   ; Pin_D17 ; -    ; seg2[5]             ;
+; LOCATION   ; Pin_E16 ; -    ; seg2[4]             ;
+; LOCATION   ; Pin_C16 ; -    ; seg2[3]             ;
+; LOCATION   ; Pin_C15 ; -    ; seg2[2]             ;
+; LOCATION   ; Pin_E15 ; -    ; seg2[1]             ;
+; LOCATION   ; Pin_C14 ; -    ; seg2[0]             ;
+; LOCATION   ; Pin_B14 ; -    ; ball_speed[1]       ;
+; LOCATION   ; Pin_A14 ; -    ; ball_speed[0]       ;
+; LOCATION   ; Pin_AA1 ; -    ; R[3]                ;
+; LOCATION   ; Pin_V1  ; -    ; R[2]                ;
+; LOCATION   ; Pin_Y2  ; -    ; R[1]                ;
+; LOCATION   ; Pin_Y1  ; -    ; R[0]                ;
+; LOCATION   ; Pin_W1  ; -    ; G[3]                ;
+; LOCATION   ; Pin_T2  ; -    ; G[2]                ;
+; LOCATION   ; Pin_R2  ; -    ; G[1]                ;
+; LOCATION   ; Pin_R1  ; -    ; G[0]                ;
+; LOCATION   ; Pin_P1  ; -    ; B[3]                ;
+; LOCATION   ; Pin_T1  ; -    ; B[2]                ;
+; LOCATION   ; Pin_P4  ; -    ; B[1]                ;
+; LOCATION   ; Pin_N2  ; -    ; B[0]                ;
+; LOCATION   ; Pin_N14 ; -    ; clk                 ;
+; LOCATION   ; Pin_F15 ; -    ; reset               ;
+; LOCATION   ; Pin_N3  ; -    ; Hsync               ;
+; LOCATION   ; Pin_N1  ; -    ; Vsync               ;
+; LOCATION   ; Pin_B8  ; -    ; start_game          ;
+; LOCATION   ; Pin_B17 ; -    ; bar                 ;
++------------+---------+------+---------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |pong ;
++----------------+--------+--------------------------------------------+
+; Parameter Name ; Value  ; Type                                       ;
++----------------+--------+--------------------------------------------+
+; div            ; 2      ; Signed Integer                             ;
+; div_paddle     ; 415000 ; Signed Integer                             ;
+; div_ball1      ; 415000 ; Signed Integer                             ;
+; div_ball2      ; 370000 ; Signed Integer                             ;
+; div_ball3      ; 310000 ; Signed Integer                             ;
+; div_ball4      ; 250000 ; Signed Integer                             ;
+; Ha             ; 96     ; Signed Integer                             ;
+; Hb             ; 144    ; Signed Integer                             ;
+; Hc             ; 784    ; Signed Integer                             ;
+; Hd             ; 800    ; Signed Integer                             ;
+; Va             ; 2      ; Signed Integer                             ;
+; Vb             ; 35     ; Signed Integer                             ;
+; Vc             ; 515    ; Signed Integer                             ;
+; Vd             ; 525    ; Signed Integer                             ;
+; paddlesizeH    ; 2      ; Signed Integer                             ;
+; paddlesizeV    ; 30     ; Signed Integer                             ;
++----------------+--------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:U0 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; div            ; 2     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_generator:u1 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; ha             ; 96    ; Signed Integer                        ;
+; hb             ; 144   ; Signed Integer                        ;
+; hc             ; 784   ; Signed Integer                        ;
+; hd             ; 800   ; Signed Integer                        ;
+; va             ; 2     ; Signed Integer                        ;
+; vb             ; 35    ; Signed Integer                        ;
+; vc             ; 515   ; Signed Integer                        ;
+; vd             ; 525   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: image_generator:u2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; ha             ; 96    ; Signed Integer                         ;
+; hb             ; 144   ; Signed Integer                         ;
+; hc             ; 784   ; Signed Integer                         ;
+; hd             ; 800   ; Signed Integer                         ;
+; va             ; 2     ; Signed Integer                         ;
+; vb             ; 35    ; Signed Integer                         ;
+; vc             ; 515   ; Signed Integer                         ;
+; vd             ; 525   ; Signed Integer                         ;
+; pvsize         ; 30    ; Signed Integer                         ;
+; phsize         ; 2     ; Signed Integer                         ;
+; ballsize       ; 3     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:u3 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; div            ; 415000 ; Signed Integer                ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:u5 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; div            ; 415000 ; Signed Integer                ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:u6 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; div            ; 370000 ; Signed Integer                ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:u7 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; div            ; 310000 ; Signed Integer                ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_gen:u8 ;
++----------------+--------+-------------------------------+
+; Parameter Name ; Value  ; Type                          ;
++----------------+--------+-------------------------------+
+; div            ; 250000 ; Signed Integer                ;
++----------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 221                         ;
+;     CLR               ; 103                         ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 50                          ;
+;     ENA CLR SCLR      ; 64                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 859                         ;
+;     arith             ; 525                         ;
+;         2 data inputs ; 333                         ;
+;         3 data inputs ; 192                         ;
+;     normal            ; 334                         ;
+;         0 data inputs ; 17                          ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 204                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.30                       ;
+; Average LUT depth     ; 5.55                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Sat Sep  2 17:41:10 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pong -c pong
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file pong.vhd
+    Info (12022): Found design unit 1: pong-VGA_arch File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 45
+    Info (12023): Found entity 1: pong File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file div_gen.vhd
+    Info (12022): Found design unit 1: div_gen-div_gen_arch File: C:/Users/MECRUN/Desktop/Quartus/pong22/div_gen.vhd Line: 14
+    Info (12023): Found entity 1: div_gen File: C:/Users/MECRUN/Desktop/Quartus/pong22/div_gen.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file image_generator.vhd
+    Info (12022): Found design unit 1: image_generator-image_generator_arch File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 37
+    Info (12023): Found entity 1: image_generator File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file score_display.vhd
+    Info (12022): Found design unit 1: score_display-score_display_arch File: C:/Users/MECRUN/Desktop/Quartus/pong22/score_display.vhd Line: 17
+    Info (12023): Found entity 1: score_display File: C:/Users/MECRUN/Desktop/Quartus/pong22/score_display.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file sync_generator.vhd
+    Info (12022): Found design unit 1: sync_generator-sync_generator_arch File: C:/Users/MECRUN/Desktop/Quartus/pong22/sync_generator.vhd Line: 27
+    Info (12023): Found entity 1: sync_generator File: C:/Users/MECRUN/Desktop/Quartus/pong22/sync_generator.vhd Line: 4
+Info (12127): Elaborating entity "pong" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at pong.vhd(232): signal "ball_clk1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at pong.vhd(233): signal "ball_clk2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at pong.vhd(234): signal "ball_clk3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 234
+Warning (10492): VHDL Process Statement warning at pong.vhd(235): signal "ball_clk4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 235
+Info (12128): Elaborating entity "div_gen" for hierarchy "div_gen:U0" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 149
+Info (12128): Elaborating entity "sync_generator" for hierarchy "sync_generator:u1" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 154
+Info (12128): Elaborating entity "image_generator" for hierarchy "image_generator:u2" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(71): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(89): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(365): signal "Ball_pos_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 365
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(366): signal "Ball_pos_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 366
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(367): signal "Ball_pos_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 367
+Warning (10492): VHDL Process Statement warning at image_generator.vhd(368): signal "Ball_pos_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 368
+Info (12128): Elaborating entity "div_gen" for hierarchy "div_gen:u3" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 203
+Info (12128): Elaborating entity "div_gen" for hierarchy "div_gen:u6" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 211
+Info (12128): Elaborating entity "div_gen" for hierarchy "div_gen:u7" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 215
+Info (12128): Elaborating entity "div_gen" for hierarchy "div_gen:u8" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 219
+Info (12128): Elaborating entity "score_display" for hierarchy "score_display:u4" File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 223
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Mux0 File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 231
+Info (13000): Registers with preset signals will power-up high File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "image_generator:u2|Ball_direction[1]" is converted into an equivalent circuit using register "image_generator:u2|Ball_direction[1]~_emulated" and latch "image_generator:u2|Ball_direction[1]~1" File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Warning (13310): Register "image_generator:u2|Ball_direction[0]" is converted into an equivalent circuit using register "image_generator:u2|Ball_direction[0]~_emulated" and latch "image_generator:u2|Ball_direction[0]~5" File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Warning (13310): Register "image_generator:u2|Ball_direction[2]" is converted into an equivalent circuit using register "image_generator:u2|Ball_direction[2]~_emulated" and latch "image_generator:u2|Ball_direction[2]~9" File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "bar" is stuck at GND File: C:/Users/MECRUN/Desktop/Quartus/pong22/pong.vhd Line: 35
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register image_generator:u2|paddle1_pos_y[7] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle1_pos_y[6] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle1_pos_y[5] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle1_pos_y[4] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle1_pos_x[1] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle2_pos_y[7] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle2_pos_y[6] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle2_pos_y[5] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|paddle2_pos_y[4] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 115
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_x[8] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_x[6] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_y[7] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_y[6] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_y[5] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+    Critical Warning (18010): Register image_generator:u2|Ball_pos_y[4] will power up to High File: C:/Users/MECRUN/Desktop/Quartus/pong22/image_generator.vhd Line: 169
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 901 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 863 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 4802 megabytes
+    Info: Processing ended: Sat Sep  2 17:41:30 2023
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:42
+
+
